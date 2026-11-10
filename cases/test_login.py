@@ -1,6 +1,6 @@
 # cases/test_login.py
 
-from lib.api_smp import login
+from lib.login_api import login
 
 def test_login():
     resp = login('byhy', 'sdfsdf')
