@@ -3,18 +3,35 @@
 from lib.device_model_api import list_device_models, add_device_model, del_device_model, get_device_id_list
 from lib.login_api import login
 
+
+
+resp = login('byhy', None)
+print(resp.status_code)
+data = resp.json()
+print(data)
+assert data['ret'] == 0
+assert 'token' in data
+
+
+
+
+
+
+
+
+
 # 先拿 token
-resp = login('byhy', 'sdfsdf')
-token = resp.json()['token']
-
-del_resp = del_device_model(token, 10000)
-del_data = del_resp.json()
-assert del_data['ret'] == 0
-
-id_list_after = get_device_id_list(token)
-new_id = 10000
-print(f'目前存在的所有id：{id_list_after}')
-assert new_id not in id_list_after
+# resp = login('byhy', 'sdfsdf')
+# token = resp.json()['token']
+#
+# del_resp = del_device_model(token, 10000)
+# del_data = del_resp.json()
+# assert del_data['ret'] == 0
+#
+# id_list_after = get_device_id_list(token)
+# new_id = 10000
+# print(f'目前存在的所有id：{id_list_after}')
+# assert new_id not in id_list_after
 
 # # 新增一条，拿到真实 id
 # add_resp = add_device_model(token, 3, "probe_tmp_01", "探针临时数据")
