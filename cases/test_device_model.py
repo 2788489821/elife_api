@@ -22,7 +22,7 @@ def test_device_model_001_crud_full_flow(token, dev_cleaner):
     id_list_after = get_device_id_list(token)
     assert new_id not in id_list_after
 
-def test_add_device_model_002_add_nomal(token, dev_cleaner):
+def test_add_device_model_002_add_normal(token, dev_cleaner):
     #新增
     add_resp = add_device_model(token, 3, '正常添加1234asdf', '正常添加测试数据')
     add_data = add_resp.json()
