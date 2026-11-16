@@ -20,7 +20,6 @@ def token():
 def add_dev_data_test(token):
     add_resp = add_device_model(token, 3, 'probe_tmp_01', '探针临时数据')
     add_json = add_resp.json()
-    print(f'新增临时数据：{add_json}')
     new_id = add_json['id']
 
     yield new_id
@@ -37,7 +36,6 @@ def add_ser_data_test(token):
     charge_rule = build_charge_rule_by_type('prepaid_fee', (1,2))
     add_resp = add_service_rule(token, '规则名称002 测试数据',2, charge_rule,'探针临时数据')
     add_json = add_resp.json()
-    print(f'新增临时数据：{add_json}')
     new_id = add_json['id']
 
     yield new_id
