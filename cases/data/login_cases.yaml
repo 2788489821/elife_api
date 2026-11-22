@@ -1,0 +1,38 @@
+# 登陆异常用例数据
+- case_id: login_fail_001
+  username: null
+  password: sdfsdf
+  expected_ret: 2
+  expected_msg: 用户名不存在
+  note: 疑似bug，此处msg应该返回'用户名不能为空'
+
+- case_id: login_fail_002
+  username: byhy
+  password: null
+  expected_ret: 3
+  expected_msg: 用户名或者密码错误
+  note: 疑似bug，此处msg应该返回'密码不能为空'
+
+- case_id: login_fail_003
+  username: byhy
+  password: sdfsdff
+  expected_ret: 3
+  expected_msg: 用户名或者密码错误
+
+- case_id: login_fail_004
+  username: byhy
+  password: sdfsd
+  expected_ret: 3
+  expected_msg: 用户名或者密码错误
+
+- case_id: login_fail_005
+  username: byhyy
+  password: sdfsdf
+  expected_ret: 2
+  expected_msg: 用户名不存在
+
+- case_id: login_fail_006
+  username: byh
+  password: sdfsdf
+  expected_ret: 2
+  expected_msg: 用户名不存在
